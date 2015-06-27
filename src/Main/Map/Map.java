@@ -119,7 +119,15 @@ public class Map  extends JPanel
 		{
 			if(input.getFill())
 			{
+				try
+				{
+					
 				fill(input.getBox()[0], input.getBox()[1],img[input.getBox()[0]][input.getBox()[1]]);
+				}
+				catch(ArrayIndexOutOfBoundsException e)
+				{
+					System.out.println("out of sheet");
+				}
 				
 			}
 			set(input.getBox()[0], input.getBox()[1]);
@@ -152,8 +160,8 @@ public class Map  extends JPanel
 	}
 	public void fill(int x, int y, Img id)
 	{
-		coun ++;
-		System.out.println(coun + ", " + x + ", " + y);
+		
+		
 		
 		if (x < img.length && x > -1 && y -1 < img[0].length && y -1 > -1 && img[x][y -1].compareTo(id))
 		{
@@ -172,7 +180,7 @@ public class Map  extends JPanel
 		{
 			x += 1;
 			set(x,y);
-			fill(x,y,id);
+			//fill(x,y,id);
 		}
 		if (x  < img.length && x  > -1 && y + 1 < img[0].length && y +1 > -1 && img[x ][y +1 ].compareTo(id))
 		{
