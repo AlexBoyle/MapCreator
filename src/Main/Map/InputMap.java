@@ -29,7 +29,7 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 	{
 		size = a;
 	}
-	public boolean setimg()//stuffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+	public boolean setimg()
 	{
 		if (set)
 		{
@@ -38,7 +38,7 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 		}
 		return false;
 	}
-	public boolean printimg()//stuffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+	public boolean printimg()
 	{
 		if (output)
 		{

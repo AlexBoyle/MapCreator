@@ -20,7 +20,7 @@ import Main.Sheet.ImgCon;
 @SuppressWarnings("serial")
 public class Map  extends JPanel
 {
-	//objects
+	//objects n stuff
 	private int coun = 0;
 	InputMap input = new InputMap();
 	Img[][] img;
@@ -34,6 +34,10 @@ public class Map  extends JPanel
 	BufferedImage b;
 	BufferedImage combined;
 	
+	/**
+	 * 
+	 * @param size1 the size of the box size size size
+	 */
 	public Map(int size1)
 	{
 		size = size1;
@@ -54,11 +58,19 @@ public class Map  extends JPanel
 		setupArray(size,900,600);
 		input.setSize(size);
 	}
+	
+	/**
+	 * 
+	 * @param a the sprite sheet being used
+	 */
 	public void setImg(ImgCon a)
 	{
 		sheet = a;
 	}
 	
+	/**
+	 * visual output onto the frame
+	 */
 	public void paint(Graphics g) 
 	{
 		super.paint(g);
@@ -72,6 +84,13 @@ public class Map  extends JPanel
 		g.dispose();
 	
 	}
+	
+	/**
+	 * 
+	 * @param size box size
+	 * @param width total width of usable area
+	 * @param height total height of usable area
+	 */
 	private void setupArray(int size, int width, int height)
 	{
 		
@@ -92,6 +111,10 @@ public class Map  extends JPanel
 				else 
 				img[i][j] = new Img(m);
 	}
+	
+	/**
+	 * this prints the image that was created when p is pressed
+	 */
 	private void createImg()
 	{
 		System.out.println("printing");
@@ -108,7 +131,10 @@ public class Map  extends JPanel
 	}
 	
 	
-	
+	/**
+	 * This is the update for the class done very tick
+	 * @param box the selected area of the sprite sheet passed from sheet
+	 */
 	public void up(int[] box)
 	{
 		
@@ -137,12 +163,22 @@ public class Map  extends JPanel
 			createImg();
 		}
 	}
+	
+	/**
+	 * 
+	 * @return the input for this class
+	 */
 	public InputMap getInput()
 	{
 		return input;
 	}
 	
 	
+	/**
+	 * 
+	 * @param x of the img array being changed
+	 * @param y of the img array being edited
+	 */
 	public void set(int x,int y)
 	{
 		try
@@ -158,6 +194,13 @@ public class Map  extends JPanel
 			System.out.println("im sorry you messed it up");
 		}
 	}
+	
+	/**
+	 * 
+	 * @param x of checked box
+	 * @param y of checked box
+	 * @param id of img being filled
+	 */
 	public void fill(int x, int y, Img id)
 	{
 		
@@ -180,14 +223,14 @@ public class Map  extends JPanel
 		{
 			x += 1;
 			set(x,y);
-			//fill(x,y,id);
+			fill(x,y,id);
 		}
 		if (x  < img.length && x  > -1 && y + 1 < img[0].length && y +1 > -1 && img[x ][y +1 ].compareTo(id))
 		{
 			
 			y += 1;
 			set(x,y);
-			//fill(x,y,id);
+			fill(x,y,id);
 		}
 		
 		

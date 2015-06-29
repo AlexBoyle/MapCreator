@@ -10,13 +10,13 @@ import java.awt.image.BufferedImage;
  */
 public class Img {
 	
-	private int[] id = {-1,-1};//defalt id for an object
+	private int[] id = {-1,-1};//Default id for the object
 	private BufferedImage img;
 	
 	
 	/**
 	 * 
-	 * @param a set the defalt image
+	 * @param a set the image
 	 */
 	public Img(BufferedImage a)
 	{
