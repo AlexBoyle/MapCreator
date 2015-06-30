@@ -10,7 +10,7 @@
 
 4) click in the map window to place selected texture
 
-5) press "p" to print the map as a jpeg called editedMap ( bug you need to click on the window after you hit p to print)
+5) press "p" to print the map as a jpeg called editedMap 
 
 
 Other buttons:
