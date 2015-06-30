@@ -65,6 +65,7 @@ public class Img {
 	 */
 	public boolean compareTo(Img com)
 	{
+		//System.out.println(id[0] == com.getId()[0] && id[1] == com.getId()[1]);
 		return (id[0] == com.getId()[0] && id[1] == com.getId()[1]);
 	}
 }
