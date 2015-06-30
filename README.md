@@ -15,4 +15,4 @@
 
 Other buttons:
 
-f - the area in whitch you click after pressing f will be filled with the selected texture
+f - the area in whitch you click after pressing f will be filled with the selected texture(currently has a stackOverflow error thing)
