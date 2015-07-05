@@ -21,7 +21,7 @@ import Main.Sheet.ImgCon;
 public class Map  extends JPanel
 {
 	//objects n stuff
-	private int coun = 0;
+	
 	InputMap input = new InputMap();
 	Img[][] img;
 	int[] selected = {0,0};
@@ -204,7 +204,6 @@ public class Map  extends JPanel
 	public void fill(int x, int y, int[] id)
 	{
 		
-		coun ++;
 		
 		if (x < img.length && x > -1 && y -1 < img[0].length && y -1 > -1 && img[x][y -1].compareToArray(id))
 		{
