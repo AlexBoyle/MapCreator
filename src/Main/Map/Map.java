@@ -148,7 +148,7 @@ public class Map  extends JPanel
 				try
 				{
 					
-				fill(input.getBox()[0], input.getBox()[1],img[input.getBox()[0]][input.getBox()[1]]);
+				fill(input.getBox()[0], input.getBox()[1],img[input.getBox()[0]][input.getBox()[1]].getId());
 				}
 				catch(ArrayIndexOutOfBoundsException e)
 				{
@@ -201,40 +201,38 @@ public class Map  extends JPanel
 	 * @param y of checked box
 	 * @param id of img being filled
 	 */
-	public void fill(int x, int y, Img id)
+	public void fill(int x, int y, int[] id)
 	{
 		
 		coun ++;
-		System.out.println(coun + ", x:" + x + ", y:" + y);
 		
-		//System.out.println("id: " + id.getId()[0] + ", " + id.getId()[1] + " comp: " + img[x][y -1].getId()[0] + ", " + img[x][y -1].getId()[1]);
-		if (x < img.length && x > -1 && y -1 < img[0].length && y -1 > -1 && img[x][y -1].compareTo(id))
+		if (x < img.length && x > -1 && y -1 < img[0].length && y -1 > -1 && img[x][y -1].compareToArray(id))
 		{
-			//System.out.println("id: " + id.getId()[0] + ", " + id.getId[1] + " comp: " + img[x][y -1].getId()[0] + ", " + img[x][y -1].getId()[1]);
+			
 			y -= 1;
 			set(x,y);
 			fill(x,y,id);
 		}
-		//System.out.println("id: " + id.getId()[0] + ", " + id.getId()[1] + " comp: " + img[x][y -1].getId()[0] + ", " + img[x -1][y].getId()[1]);
-		if (x -1 < img.length && x -1 > -1 && y  < img[0].length && y  > -1 && img[x -1][y ].compareTo(id))
+		
+		if (x -1 < img.length && x -1 > -1 && y  < img[0].length && y  > -1 && img[x -1][y ].compareToArray(id))
 		{
-			//System.out.println("id: " + id[0] + ", " + id[1] + " comp: " + img[x][y -1].getId()[0] + ", " + img[x][y -1].getId()[1]);
+			
 			x -= 1;
 			set(x,y);
 			fill(x,y,id);
 		}
-		//System.out.println("id: " + id.getId()[0] + ", " + id.getId()[1] + " comp: " + img[x][y -1].getId()[0] + ", " + img[x + 1][y -1].getId()[1]);
-		if (x +1 < img.length && x +1 > -1 && y  < img[0].length && y  > -1 && img[x +1][y ].compareTo(id))
+		
+		if (x +1 < img.length && x +1 > -1 && y  < img[0].length && y  > -1 && img[x +1][y ].compareToArray(id))
 		{
-			//System.out.println("left" + img[x -1][y ].compareTo(id) + ", right:" + img[x +1][y ].compareTo(id));
+			
 			x += 1;
 			set(x,y);
 			fill(x,y,id);
 		}
-		//System.out.println("id: " + id.getId()[0] + ", " + id.getId()[1] + " comp: " + img[x][y -1].getId()[0] + ", " + img[x][y +1].getId()[1]);
-		if (x  < img.length && x  > -1 && y + 1 < img[0].length && y +1 > -1 && img[x ][y +1 ].compareTo(id))
+		
+		if (x  < img.length && x  > -1 && y + 1 < img[0].length && y +1 > -1 && img[x ][y +1 ].compareToArray(id))
 		{
-			//System.out.println("left" + img[x -1][y ].compareTo(id) + ", right:" + img[x +1][y ].compareTo(id));
+			
 			y += 1;
 			set(x,y);
 			fill(x,y,id);
