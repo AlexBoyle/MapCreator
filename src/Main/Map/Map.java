@@ -77,7 +77,7 @@ public class Map  extends JPanel
 		
 		for (int i = 0; i < img.length; i ++)
 			for (int j = 0; j < img[i].length; j ++)
-				g.drawImage(img[i][j].getImg(), (i*size) + input.getX(), (j*size) + input.getY(), null);
+				g.drawImage(img[i][j].getImg(), (i*size) , (j*size)  , null);
 		
 		
 		Toolkit.getDefaultToolkit().sync();
@@ -161,6 +161,10 @@ public class Map  extends JPanel
 		if(input.printimg())
 		{
 			createImg();
+		}
+		if(input.getReset())
+		{
+			setupArray(size,900,600);
 		}
 	}
 	

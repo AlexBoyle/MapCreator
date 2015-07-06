@@ -43,6 +43,7 @@ public class Main
 		map.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		map.setResizable(true);
 		map.setSize(1024, 800);
+		map.setExtendedState( map.getExtendedState()|JFrame.MAXIMIZED_BOTH );
 		map.setLocationRelativeTo(null);
 		map.setVisible(true);
 		map.setBackground(Color.BLUE);

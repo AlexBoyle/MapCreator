@@ -15,13 +15,12 @@ import java.awt.event.MouseMotionListener;
 public class InputMap implements MouseMotionListener, MouseListener,KeyListener 
 {
 	private int size = 0;
-	private int x = 20;//x of img
-	private int y = 20;//y of img
 	private int tx = 0;//temp mouse x
 	private int ty = 0;//temp mouse y
 	private int sx = 0;//selected mousex x
 	private int sy = 0;//selected mouse y
 	private boolean set = false;
+	private boolean reset = false;
 	private boolean output = false;
 	private boolean fill = false;
 
@@ -34,6 +33,15 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 		if (set)
 		{
 			set = false;
+			return true;
+		}
+		return false;
+	}
+	public boolean getReset()
+	{
+		if (reset)
+		{
+			reset = false;
 			return true;
 		}
 		return false;
@@ -60,9 +68,9 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 	public void mouseClicked(MouseEvent m) 
 	{
 		
-		sx = m.getX()-x-7;
+		sx = m.getX()-7;
 		set = true;
-		sy = m.getY()-y - 30;
+		sy = m.getY() - 30;
 		
 	}
 
@@ -83,8 +91,6 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 	@Override
 	public void mousePressed(MouseEvent m) 
 	{
-		tx = m.getX();
-		ty = m.getY();
 		
 	}
 
@@ -98,10 +104,9 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 	@Override
 	public void mouseDragged(MouseEvent m) 
 	{
-		x -= (tx - m.getX());
-		tx = m.getX();
-		y -= (ty - m.getY());
-		ty = m.getY();
+		sx = m.getX()-7;
+		set = true;
+		sy = m.getY() - 30;
 	}
 
 	@Override
@@ -110,14 +115,7 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 		
 		
 	}
-	public int getX()
-	{
-		return x;
-	}
-	public int getY()
-	{
-		return y;
-	}
+	
 	public int[] getBox()
 	{
 		
@@ -130,7 +128,7 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 	@Override
 	public void keyPressed(KeyEvent k) {
 		int key = k.getKeyCode();
-		
+		System.out.println(key);
 		if (key == 80)//p
 		{
 			output = true;
@@ -138,6 +136,10 @@ public class InputMap implements MouseMotionListener, MouseListener,KeyListener
 		else if (key == 70)
 		{
 			fill = true;
+		}
+		else if (key ==82)
+		{
+			reset = true;
 		}
 		
 	}
